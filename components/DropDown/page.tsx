@@ -8,6 +8,8 @@ const DropDown: React.FC<DropDownInterface> = ({
   label,
   options = [],
   className,
+  showSelectDeselectAll = true,
+  showTextInput = true,
 }) => {
   const [checked, setChecked] = useState(false);
   const [selectAll, setSelectAll] = useState(false);
@@ -23,7 +25,7 @@ const DropDown: React.FC<DropDownInterface> = ({
     }
   };
   return (
-    <div className={`relative  bg-white px-3 flex-grow`}>
+    <div className={`relative  bg-white px-3 flex-grow ${className}`}>
       <TextCheckBox
         hideCheckIcon
         label={label}
@@ -33,21 +35,27 @@ const DropDown: React.FC<DropDownInterface> = ({
       />
 
       {checked && (
-        <div className='absolute left-0 border-2 border-red-700  bg-white'>
-          <input
-            type='text'
-            className='border-[1px] border-secondaryColor p-2 m-2 rounded-sm'
-            ref={inputRef}
-            onChange={searchInput}
-          />
-          <div className='flex items-center border-[1px] border-gray-200 w-fit mx-auto my-3 rounded overflow-hidden'>
-            <Button className='capitalize hover:bg-gray-100 border-[1px] border-gray-200 text-xs p-2'>
-              select all
-            </Button>
-            <Button className='capitalize hover:bg-gray-100 border-[1px] border-gray-200 text-xs p-2'>
-              deselect all
-            </Button>
-          </div>
+        <div
+          className={`absolute left-0 border-[1px] border-primaryColor  bg-white `}
+        >
+          {showTextInput && (
+            <input
+              type='text'
+              className='border-[1px] border-secondaryColor p-2 m-2 rounded-sm'
+              ref={inputRef}
+              onChange={searchInput}
+            />
+          )}
+          {showSelectDeselectAll && (
+            <div className='flex items-center border-[1px] border-gray-200 w-fit mx-auto my-3 rounded overflow-hidden'>
+              <Button className='capitalize hover:bg-gray-100 border-[1px] border-gray-200 text-xs p-2'>
+                select all
+              </Button>
+              <Button className='capitalize hover:bg-gray-100 border-[1px] border-gray-200 text-xs p-2'>
+                deselect all
+              </Button>
+            </div>
+          )}
 
           <div className=''>
             {!searchedWord &&

@@ -1,15 +1,13 @@
 'use client';
+import { SelectOptionsInterface } from '@/types/types';
 import React, { useState, useEffect, useRef } from 'react';
 import { RiArrowDownSLine } from 'react-icons/ri';
-
-interface SelectOptionsInterface {
-  className?: string;
-  options: string[];
-}
 
 const SelectOptions: React.FC<SelectOptionsInterface> = ({
   className,
   options = [],
+  showTextInput = true,
+  placeHolder,
 }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [expand, setExpand] = useState<boolean>(false);
@@ -24,8 +22,8 @@ const SelectOptions: React.FC<SelectOptionsInterface> = ({
   };
   useEffect(() => {
     setSearchedWord(null);
-    if (options.length > 0) setSelectedOption(options[0]);
-  }, [options]);
+    if (placeHolder) setSelectedOption(null);
+  }, [placeHolder]);
 
   const searchInput = () => {
     if (inputRef.current) {
@@ -37,24 +35,35 @@ const SelectOptions: React.FC<SelectOptionsInterface> = ({
       onClick={expandHandler}
       className={`relative flex items-center justify-between   bg-white border-[1px] border-primaryColor  p-3 rounded ${className} cursor-pointer `}
     >
-      <span className=''>{selectedOption}</span>
+      <span className={`${!selectedOption && 'text-gray-400'}`}>
+        {selectedOption ? selectedOption : placeHolder}
+      </span>
       <RiArrowDownSLine />
       {expand && (
         <div
           className='absolute top-full left-0 w-full
-      border-[1px] border-primaryColor rounded-lg overflow-hidden mt-2 bg-white'
+      border-[1px] z-50 border-primaryColor rounded-lg overflow-hidden mt-2 bg-white'
         >
-          <div className='p-3'>
-            <input
-              ref={inputRef}
-              onClick={(e) => e.stopPropagation()}
-              type='text'
-              className='w-full border-[1px] border-primaryColor p-2'
-              onChange={searchInput}
-            />
-          </div>
+          {showTextInput && (
+            <div className='p-3'>
+              <input
+                ref={inputRef}
+                onClick={(e) => e.stopPropagation()}
+                type='text'
+                className='w-full border-[1px] border-primaryColor p-2'
+                onChange={searchInput}
+              />
+            </div>
+          )}
 
           <div className='flex flex-col overflow-hidden max-h-[30vh] overflow-y-scroll'>
+            <span
+              key={placeHolder}
+              onClick={() => setSelectedOption(null)}
+              className='p-3 hover:bg-secondaryLightColor'
+            >
+              {placeHolder}
+            </span>
             {!searchedWord &&
               options.map((option) => (
                 <span

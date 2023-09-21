@@ -9,6 +9,14 @@ export interface DropDownInterface {
   label: string;
   options: string[];
   className?: string;
+  showTextInput?: boolean;
+  showSelectDeselectAll?: boolean;
+}
+export interface SelectOptionsInterface {
+  className?: string;
+  options: string[];
+  showTextInput?: boolean;
+  placeHolder: string;
 }
 
 export interface TextCheckBoxInterface {

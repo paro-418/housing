@@ -8,7 +8,10 @@ import SelectOptions from '@/components/SelectOptions/page';
 import { AiOutlinePlusSquare } from 'react-icons/ai';
 import CheckBoxGroup from '@/components/CheckBoxGroup/page';
 
-const NavForms = () => {
+interface NavFormsInterface {
+  className?: string;
+}
+const NavForms: React.FC<NavFormsInterface> = ({ className }) => {
   const [expand, setExpand] = useState<boolean>(false);
   const [otherFeatureExpand, setOtherFeatureExpand] = useState<boolean>(false);
   const toggleExpand = () => setExpand(!expand);
@@ -18,12 +21,13 @@ const NavForms = () => {
     e.preventDefault();
   };
   return (
-    <div className='border-4 border-blue-700 bg-primaryColor '>
+    <div className={className}>
       <form
-        className='w-[80%] border-2 border-white  mx-auto flex flex-col gap-4'
+        className='w-[80%] pt-4  mx-auto flex flex-col gap-4 overflow-visible'
         onSubmit={submitForm}
       >
-        <div className='flex gap-4 '>
+        {/* <div> */}
+        <div className=' flex gap-4 '>
           <span className='bg-white flex gap-4 items-center px-1 w-1/2'>
             <AiOutlineSearch className='text-2xl ' />
             <input
@@ -70,10 +74,12 @@ const NavForms = () => {
               <SelectOptions
                 className=' basis-[20%] '
                 options={['1', '2', '3', '4']}
+                placeHolder='bedrooms'
               />
               <SelectOptions
                 className=' basis-[20%] '
                 options={['1', '2', '3', '4']}
+                placeHolder='bedrooms'
               />
               <input
                 placeholder='Min. Area'
@@ -108,7 +114,7 @@ const NavForms = () => {
             <span>Others Features</span>
           </Button>
           <CheckBoxGroup
-            className={`${
+            className={`my-4 ${
               otherFeatureExpand
                 ? 'h-fit pointer-events-auto opacity-100'
                 : 'h-0 pointer-events-none opacity-0'
@@ -142,6 +148,7 @@ const NavForms = () => {
             ]}
           />
         </div>
+        {/* </div> */}
       </form>
     </div>
   );

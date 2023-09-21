@@ -12,6 +12,7 @@ const config: Config = {
         primaryColor: '#004274',
         secondaryColor: '#00aeff',
         secondaryLightColor: '#c7ecfc',
+        secondaryLightTransparentColor: 'rgb(52, 155, 235,0.9)',
         tertiaryColor: '#566f7a',
       },
     },
