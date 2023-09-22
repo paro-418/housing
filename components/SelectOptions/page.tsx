@@ -8,13 +8,16 @@ const SelectOptions: React.FC<SelectOptionsInterface> = ({
   options = [],
   showTextInput = true,
   placeHolder,
+  exportChosenValue = () => null,
 }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [expand, setExpand] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [searchedWord, setSearchedWord] = useState<string | null>(null);
 
-  // const [opened, setOpened] = useState<boolean>(false);
+  useEffect(() => {
+    exportChosenValue(selectedOption);
+  }, [selectedOption, exportChosenValue]);
 
   const expandHandler = () => {
     setSearchedWord(null);

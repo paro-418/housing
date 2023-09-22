@@ -20,6 +20,9 @@ const NavForms: React.FC<NavFormsInterface> = ({ className }) => {
   const submitForm = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
+  const showValue = (x: string | null) => {
+    console.log('xxxxxxxxxxxxxxxxx', x);
+  };
   return (
     <div className={className}>
       <form
@@ -75,10 +78,12 @@ const NavForms: React.FC<NavFormsInterface> = ({ className }) => {
                 className=' basis-[20%] '
                 options={['1', '2', '3', '4']}
                 placeHolder='bedrooms'
+                exportChosenValue={showValue}
               />
               <SelectOptions
                 className=' basis-[20%] '
                 options={['1', '2', '3', '4']}
+                exportChosenValue={showValue}
                 placeHolder='bedrooms'
               />
               <input

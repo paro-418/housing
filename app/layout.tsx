@@ -3,7 +3,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import FooterPage from '@/components/Footer/page';
-import NavForms from '@/components/Forms/NavForms/page';
+import { FiTriangle } from 'react-icons/fi';
+import StickyNavigation from '@/components/StickyNavigation/page';
+import ScrollButton from '@/components/ScrollButton/page';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,12 +22,15 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`border-4 border-red-600 w-screen min-h-screen overflow-x-hidden`}
+        className={`border-4 relative border-red-600 w-screen min-h-screen overflow-x-hidden`}
       >
         <HeaderPage />
 
+        <StickyNavigation />
+
         {children}
         <FooterPage />
+        <ScrollButton />
       </body>
     </html>
   );

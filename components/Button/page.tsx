@@ -5,9 +5,10 @@ const Button: React.FC<ButtonInterface> = ({
   children,
   className,
   callFunction,
+  id,
 }) => {
   return (
-    <button onClick={callFunction} className={className}>
+    <button id={id} onClick={callFunction} className={className}>
       {children}
     </button>
   );
