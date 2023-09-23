@@ -42,3 +42,15 @@ export interface SliderInterface {
   slides: SlidesInterface[];
   className?: string;
 }
+export interface AboutEachEmployeeInterface {
+  name: string;
+  imageUrl: string;
+  designation: string;
+  twitterUrl?: string | null | undefined;
+  instagramUrl?: string | null | undefined;
+  linkedUrl?: string | null | undefined;
+  facebookUrl?: string | null | undefined;
+  description: string;
+  paragraph1?: string;
+  paragraph2?: string;
+}

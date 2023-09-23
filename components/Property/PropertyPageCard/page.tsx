@@ -42,7 +42,8 @@ const PropertyPageCard: React.FC<PropertyPageCardInterface> = ({
             src={imagesArray[currentImage]}
             alt='furniture'
             fill={true}
-            objectFit='cover'
+            // objectFit='cover'
+            className='object-cover'
             loading='lazy'
           />
           <Button
