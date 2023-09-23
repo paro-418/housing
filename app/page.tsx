@@ -10,6 +10,7 @@ import { GiReceiveMoney } from 'react-icons/gi';
 import { FaRegHandshake } from 'react-icons/fa';
 import { LiaFileContractSolid } from 'react-icons/lia';
 import { BsKey, BsBarChartLine, BsCheckLg } from 'react-icons/bs';
+import Slider from '@/components/Slider/page';
 
 const slides: SlidesInterface[] = [
   {
@@ -301,7 +302,9 @@ export default function Home() {
           Load more
         </Button>
       </section>
-      <section className='bg-white px-24'>{/* slider section */}</section>
+      <section className='bg-white px-24'>
+        <Slider slides={slides} />
+      </section>
       <section className='bg-white p-28 flex flex-col gap-16 items-center'>
         <div>
           <h4 className='text-center text-4xl'>How it works</h4>

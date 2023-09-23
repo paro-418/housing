@@ -1,5 +1,7 @@
 import AboutEachEmployee from '@/components/About/AboutEachEmployee/page';
-import { AboutEachEmployeeInterface } from '@/types/types';
+import Slider from '@/components/Slider/page';
+
+import { AboutEachEmployeeInterface, SlidesInterface } from '@/types/types';
 import React from 'react';
 
 const employeeArray: AboutEachEmployeeInterface[] = [
@@ -47,6 +49,78 @@ const employeeArray: AboutEachEmployeeInterface[] = [
       'property management. For the past three years, he has been running his own startup called AK technocrats. The startup focuses on meeting all the housing needs such as s',
     paragraph2:
       's an entrepreneur focused on simplifying property management decisions. He actively supports his team and business at all levels. He provides training to the entire team and individual memberss',
+  },
+];
+const slides: SlidesInterface[] = [
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'abc',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'abc',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'abc',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'abc',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'abc',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'def',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'ghi',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'abc',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'def',
+    avatarUrl: 'kdwkdwe',
+  },
+  {
+    date: 'now',
+    description:
+      'I am a tenant of AngelSpace and whenever I had called for any maintenance issue or other queries,they have responded quickly and have resolved the problem',
+    name: 'ghi',
+    avatarUrl: 'kdwkdwe',
   },
 ];
 
@@ -113,6 +187,9 @@ const AboutUsPage = () => {
             <AboutEachEmployee key={employee.name} {...employee} />
           ))}
         </div>
+      </section>
+      <section className='px-40 py-20'>
+        <Slider slides={slides} />
       </section>
     </main>
   );

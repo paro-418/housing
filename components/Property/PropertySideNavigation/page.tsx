@@ -7,7 +7,7 @@ const PropertySideNavigation = () => {
     <div className='basis-[30%] flex flex-col gap-8'>
       <div className=' p-4 flex flex-col gap-4 justify-between min-h-[20vh] bg-white '>
         <h3 className='font-semibold'>Featured Listings</h3>
-        <div></div>
+        {/* <div> add element here</div> */}
       </div>
       <div className=' p-4 flex flex-col gap-4 justify-between min-h-[20vh] bg-white'>
         <h3 className='font-semibold'>Property type</h3>
