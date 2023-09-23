@@ -21,7 +21,7 @@ const NavForms: React.FC<NavFormsInterface> = ({ className }) => {
     e.preventDefault();
   };
   const showValue = (x: string | null) => {
-    console.log('xxxxxxxxxxxxxxxxx', x);
+    console.log('selected value', x);
   };
   return (
     <div className={className}>
@@ -29,34 +29,35 @@ const NavForms: React.FC<NavFormsInterface> = ({ className }) => {
         className='w-[80%] pt-4  mx-auto flex flex-col gap-4 overflow-visible'
         onSubmit={submitForm}
       >
-        {/* <div> */}
         <div className=' flex gap-4 '>
-          <span className='bg-white flex gap-4 items-center px-1 w-1/2'>
+          <span className='rounded-md bg-white flex gap-4 items-center px-1 w-1/2'>
             <AiOutlineSearch className='text-2xl ' />
             <input
               type='text'
               placeholder='Enter Keyword...'
-              className='flex-grow p-2'
+              className='flex-grow p-2 rounded-md'
             />
           </span>
 
           <DropDown
             label='Status'
             options={['For Lease', 'For Leas', 'For Lea']}
+            className='rounded-md'
           />
           <DropDown
             label='Type'
             options={['residential', 'apartment', 'independent house', 'villa']}
+            className='rounded-md'
           />
           <Button
             callFunction={toggleExpand}
-            className='text-white p-2  flex gap-2 items-center justify-between'
+            className='text-white p-2 rounded-md flex gap-2 items-center justify-between'
           >
             <FiSettings />
             <span className='font-semibold'>Advance</span>
           </Button>
 
-          <Button className='bg-secondaryColor text-white flex-grow'>
+          <Button className='bg-secondaryColor rounded-md font-semibold text-white flex-grow'>
             search
           </Button>
         </div>
@@ -64,8 +65,8 @@ const NavForms: React.FC<NavFormsInterface> = ({ className }) => {
         <div
           className={` duration-200 ${
             expand
-              ? 'h-fit pointer-events-auto opacity-100'
-              : 'h-0 pointer-events-none opacity-0'
+              ? 'h-fit pointer-events-auto opacity-100 visible'
+              : 'h-0 pointer-events-none opacity-0 invisible'
           }`}
         >
           <div
@@ -73,7 +74,7 @@ const NavForms: React.FC<NavFormsInterface> = ({ className }) => {
               expand ? 'h-[30vh]' : 'h-0'
             }`}
           >
-            <div className='border-2 flex gap-4 border-red-800'>
+            <div className='flex gap-4'>
               <SelectOptions
                 className=' basis-[20%] '
                 options={['1', '2', '3', '4']}
@@ -124,36 +125,9 @@ const NavForms: React.FC<NavFormsInterface> = ({ className }) => {
                 ? 'h-fit pointer-events-auto opacity-100'
                 : 'h-0 pointer-events-none opacity-0'
             }`}
-            options={[
-              'a',
-              'b',
-              'c',
-              'd',
-              'b',
-              'c',
-              'd',
-              'b',
-              'c',
-              'd',
-              'b',
-              'c',
-              'd',
-
-              'b',
-              'c',
-              'd',
-
-              'b',
-              'c',
-              'd',
-
-              'b',
-              'c',
-              'd',
-            ]}
+            options={['a', 'b', 'c', 'd']}
           />
         </div>
-        {/* </div> */}
       </form>
     </div>
   );

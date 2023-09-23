@@ -7,7 +7,7 @@ import Link from 'next/link';
 const FooterPage = () => {
   return (
     <footer className='w-screen bg-primaryColor text-white '>
-      <div className='flex gap-8 p-40 border-red-600 border-2 font-light'>
+      <div className='flex gap-8 p-40  font-light'>
         <div className='basis-1/3 flex flex-col gap-4'>
           <h2 className='text-2xl font-semibold capitalize'>contact us</h2>
           <p className='flex gap-1'>
@@ -31,9 +31,9 @@ const FooterPage = () => {
           </span>
         </div>
 
-        <div className='flex-grow flex flex-col gap-4 border-green-600 border-2'>
+        <div className='flex-grow flex flex-col gap-4 '>
           <h2 className='text-2xl font-semibold capitalize'>News letter</h2>
-          <span className='flex items-center gap-6 border-yellow-600 border-2'>
+          <span className='flex items-center gap-6 '>
             <input
               type='email'
               className='p-2 rounded basis-2/3 text-black font-normal'

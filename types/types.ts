@@ -4,7 +4,7 @@ export interface ButtonInterface {
   className?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
   disable?: boolean;
-  id?: string
+  id?: string;
 }
 export interface DropDownInterface {
   label: string;
@@ -19,6 +19,8 @@ export interface SelectOptionsInterface {
   showTextInput?: boolean;
   placeHolder: string;
   exportChosenValue: (returnedValue: string | null) => void;
+  flexGap?: string;
+  dropDownHeight?: string;
 }
 
 export interface TextCheckBoxInterface {

@@ -1,10 +1,7 @@
 import Button from '@/components/Button/page';
-import DropDown from '@/components/DropDown/page';
 import EnquiryForm from '@/components/Forms/EnquiryForm/page';
 import HomeForm from '@/components/Forms/HomeForm/page';
 import PropertySliderPreviewer from '@/components/PropertySliderPreviewer/page';
-import SelectOptions from '@/components/SelectOptions/page';
-import Slider from '@/components/Slider/page.jsx';
 import { SlidesInterface } from '@/types/types';
 import Image from 'next/image';
 import Link from 'next/link';

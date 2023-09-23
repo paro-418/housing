@@ -1,5 +1,5 @@
+import PropertiesPage from '@/app/properties/[propertyType]/page';
 import React from 'react';
-import PropertiesPage from './[propertyType]/page';
 
 const page = () => {
   return <PropertiesPage />;

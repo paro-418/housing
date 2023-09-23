@@ -9,6 +9,8 @@ const SelectOptions: React.FC<SelectOptionsInterface> = ({
   showTextInput = true,
   placeHolder,
   exportChosenValue = () => null,
+  flexGap = 0,
+  dropDownHeight = '50vh',
 }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [expand, setExpand] = useState<boolean>(false);
@@ -36,7 +38,7 @@ const SelectOptions: React.FC<SelectOptionsInterface> = ({
   return (
     <div
       onClick={expandHandler}
-      className={`relative flex items-center justify-between   bg-white border-[1px] border-primaryColor  p-3 rounded ${className} cursor-pointer `}
+      className={`relative flex items-center justify-between   bg-white border-[1px] border-primaryColor gap-${flexGap}  p-3 rounded ${className} cursor-pointer `}
     >
       <span className={`${!selectedOption && 'text-gray-400'}`}>
         {selectedOption ? selectedOption : placeHolder}
@@ -59,7 +61,9 @@ const SelectOptions: React.FC<SelectOptionsInterface> = ({
             </div>
           )}
 
-          <div className='flex flex-col overflow-hidden max-h-[30vh] overflow-y-scroll'>
+          <div
+            className={`flex flex-col overflow-hidden max-h-[${dropDownHeight}] overflow-y-scroll`}
+          >
             <span
               key={placeHolder}
               onClick={() => setSelectedOption(null)}
